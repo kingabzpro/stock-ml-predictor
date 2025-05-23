@@ -66,6 +66,7 @@ DC_Claude_4/
 │   ├── models/
 │   │   ├── train.py           # Model training scripts
 │   │   ├── evaluate.py        # Model evaluation
+│   │   ├── generate_report.py # Model evaluation report
 │   │   └── predict.py         # Prediction utilities with Backtester
 │   ├── api/
 │   │   ├── app.py             # Flask API
@@ -79,7 +80,6 @@ DC_Claude_4/
 ├── reports/                   # Evaluation reports
 ├── tests/                     # Unit tests
 ├── requirements.txt
-├── requirements-light.txt     # Minimal requirements
 ├── config.yaml                # Configuration file
 ├── run_demo.py                # Demo script
 └── README.md
