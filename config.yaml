@@ -1,0 +1,52 @@
+data:
+  symbols: ['AAPL', 'GOOGL', 'MSFT', 'AMZN']
+  start_date: '2020-01-01'
+  end_date: '2024-01-01'
+  features:
+    - 'open'
+    - 'high'
+    - 'low'
+    - 'close'
+    - 'volume'
+    - 'SMA_20'
+    - 'SMA_50'
+    - 'RSI'
+    - 'MACD'
+    - 'BB_upper'
+    - 'BB_lower'
+    - 'ATR'
+  interval: '1d'
+
+model:
+  algorithm: 'gradient_boosting'  # Options: 'random_forest', 'gradient_boosting', 'linear_regression'
+  hyperparameters:
+    random_forest:
+      n_estimators: 100
+      max_depth: 15
+      min_samples_split: 5
+      min_samples_leaf: 2
+    gradient_boosting:
+      n_estimators: 100
+      max_depth: 10
+      learning_rate: 0.1
+      subsample: 0.8
+    linear_regression:
+      fit_intercept: true
+      normalize: false
+  
+training:
+  test_size: 0.2
+  validation_size: 0.1
+  random_state: 42
+  scaling: 'standard'  # Options: 'standard', 'minmax'
+  
+api:
+  host: '0.0.0.0'
+  port: 5000
+  debug: false
+  cors_enabled: true
+  
+logging:
+  level: 'INFO'
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  file: 'logs/app.log'
