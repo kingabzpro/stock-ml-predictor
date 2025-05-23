@@ -200,7 +200,7 @@ class ModelTrainer:
         latest_path = os.path.join('models', 'trained', f'{symbol}_{algorithm}_latest.pkl')
         if os.path.exists(latest_path):
             os.remove(latest_path)
-        os.symlink(os.path.basename(model_path), latest_path)
+        os.symlink(os.path.abspath(model_path), latest_path)
 
 def main():
     parser = argparse.ArgumentParser(description='Train stock prediction model')
